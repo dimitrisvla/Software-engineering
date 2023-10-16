@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Set grades</title>
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <form 
+  action="#" 
+  th:action="@{/prof/saveGrades}" th:object="${thesis}" method="post">
+    <h3>Set grades</h3>
+    <input type="text" th:field="*{implementationGrade}" th:value="*{implementationGrade}" /> <br/><br/>
+     <input type="text" th:field="*{presentationGrade}" th:value="*{presentationGrade}" /> <br/><br/>
+     <input type="text" th:field="*{reportGrade}" th:value="*{reportGrade}" /> <br/><br/>
+     <input type="hidden" th:field="*{id}" th:value="*{id}" /> <br/><br/>
+     <input type="text" th:field="*{totalGrade}" th:value="*{totalGrade}" /> <br/><br/>
+     
+    <button type="submit" class="btn btn-info col-3">Set grades</button> 
+    
+    <a th:href="@{/prof/reqAssignSubj}" class="btn btn-primary col-3"> Cancel</a>
+    <br/><br/>
+    <span th:utext="${errorMessage}"></span>
+</form>
+</body>
+</html>
