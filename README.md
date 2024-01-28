@@ -1,3 +1,3 @@
 # Software-engineering
 
-Diploma Projects Management App
+Management App for Diploma Projects 
